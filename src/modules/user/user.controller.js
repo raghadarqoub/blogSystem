@@ -5,11 +5,11 @@ export const getUsers = async(req , res )=>{
     try{
         const users = await userModel.findAll({
             include:blogModel,
-            where:{
-                age:{
-                    [Op.gte]:25,
-                }
-            }
+            // where:{
+            //     age:{
+            //         [Op.gte]:25,
+            //     }
+            // }
         });
         return res.json({message:"success",users});
     }catch(error) {
